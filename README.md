@@ -9,7 +9,6 @@ subgraph CI
 A --> O[git local]
 O --> P[git push]
 P --> B
-A --> B[Github]
 B --> K[jenkins]
 K --> L[pipeline]
 L --> M[commit git]
