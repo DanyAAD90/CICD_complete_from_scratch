@@ -8,8 +8,7 @@ A[wordpress] --> G[node exporter]
 subgraph CI
 A --> O[git local]
 O --> P[git push]
-P --> B
-B --> K[jenkins]
+P --> K[jenkins]
 K --> L[pipeline]
 L --> M[commit git]
 M --> N[erase old and paste new repo git]
