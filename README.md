@@ -7,7 +7,6 @@ flowchart LR
 A[wordpress] --> B[.git local]
 B --> C[Azure DevOps]
 B --> D[Github as backup]
-end
 A --> G[Dockerfile]
 G --> H[Image]
 subgraph CD
