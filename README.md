@@ -4,16 +4,9 @@ Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o 
 
 ```mermaid
 flowchart LR
-A[MoniNet_App] --> B[.git local]
+A[wordpress] --> B[.git local]
 B --> C[Azure DevOps]
 B --> D[Github as backup]
-subgraph CI
-C --> E[Repos]
-E --> F[Pipelines]
-F --> J[Build]
-J --> K[Job]
-K --> M[Artifact]
-M --> N[Release]
 end
 A --> G[Dockerfile]
 G --> H[Image]
