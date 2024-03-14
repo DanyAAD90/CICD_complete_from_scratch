@@ -6,8 +6,8 @@ flowchart LR
 A[wordpress] --> G[node exporter]
 Z[AWS] --> X[terraform]
 X --> A
-Z --> K
-Z --> J
+X --> K
+X --> J
 subgraph CI
 A --> O[git local]
 O --> P[git push]
