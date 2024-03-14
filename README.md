@@ -5,12 +5,10 @@ Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o 
 ```mermaid
 flowchart LR
 A[wordpress] --> B[.git local]
-B --> C[Azure DevOps]
 B --> D[Github as backup]
-A --> G[Dockerfile]
+A --> G[docker-compose]
 G --> H[Image]
 subgraph CD
-H --> I[Azure Container Registries Release]
 H --> L[docker hub public release]
 end
 N --> H
