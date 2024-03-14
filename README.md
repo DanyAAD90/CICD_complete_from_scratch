@@ -5,6 +5,9 @@ Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o 
 ```mermaid
 flowchart LR
 A[wordpress] --> B[.git local]
+A --> G[node exporter]
+G --> H[prometheus]
+H --> I[grafana]
 B --> C[Github as backup]
 A --> D[docker-compose]
 D --> E[Image]
