@@ -1,4 +1,29 @@
-# aws_hosting
+# Born to be Wild
+
+Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o najnowsze technologie devops. Poniżej graph prezentujący wstępne założenia:
+
+```mermaid
+flowchart LR
+A[MoniNet_App] --> B[.git local]
+B --> C[Azure DevOps]
+B --> D[Github as backup]
+subgraph CI
+C --> E[Repos]
+E --> F[Pipelines]
+F --> J[Build]
+J --> K[Job]
+K --> M[Artifact]
+M --> N[Release]
+end
+A --> G[Dockerfile]
+G --> H[Image]
+subgraph CD
+H --> I[Azure Container Registries Release]
+H --> L[docker hub public release]
+end
+N --> H
+```
+
 aws hosting cicd
 
 dzień trzeci, stawiamy jenkinsa. commit....
