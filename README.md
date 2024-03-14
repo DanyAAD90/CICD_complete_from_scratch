@@ -10,8 +10,7 @@ A --> O[git local]
 O --> P[git push]
 P --> K[jenkins]
 K --> L[pipeline]
-L --> M[commit git]
-M --> N[erase old and paste new repo git]
+L --> N[erase old and paste new repo git]
 N --> A
 end
 subgraph Monitoring
