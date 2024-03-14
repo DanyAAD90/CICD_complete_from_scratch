@@ -9,6 +9,9 @@ A --> G[node exporter]
 A --> K[jenkins]
 subgraph CI
 K --> L[pipeline]
+L --> M[commit git]
+M --> N[erase old and paste new repo git]
+N --> A
 end
 subgraph Monitoring
 G --> H[prometheus]
