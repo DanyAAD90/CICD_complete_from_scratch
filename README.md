@@ -6,6 +6,10 @@ Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o 
 flowchart LR
 A[wordpress] --> B[.git local]
 A --> G[node exporter]
+A --> K[jenkins]
+subgraph CI
+K --> L[pipeline]
+end
 subgraph Monitoring
 G --> H[prometheus]
 H --> I[grafana]
