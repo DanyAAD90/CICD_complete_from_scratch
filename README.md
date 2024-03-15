@@ -27,6 +27,12 @@ subgraph CD
 E --> F[docker hub public release]
 end
 ```
+<style>
+    .green-header {
+        color: green;
+    }
+</style>
+
 <span class="green-header"># Konfiguracja instancji aws_wordpress_tf</span>
 instalacja skryptów:
 ```
@@ -42,6 +48,12 @@ instalacja skryptów:
 ```
 skrypt
 ```
+<style>
+    .green-header {
+        color: blue;
+    }
+</style>
+
 <span class="blue-header"># Automatyzacja tworzenia instancji Terraform</span>
 Tworzenie instancji terraform, z której będą tworzone automaty.
 
