@@ -52,8 +52,8 @@ security group = vpc-0bb5a3a12797eabae (launch-wizard-1)
 volumes = storage 8GiB
 ```
 Instalacja na instancji terraform programu terraform oraz aws cli. \
-Skonfigurowanie IAM, grupy, usera na koncie AWS
-Konfiguracja pliku config w ~/.aws/config
+Skonfigurowanie IAM, grupy, usera na koncie AWS. \
+Konfiguracja pliku config w ~/.aws/config. \
 Logowanie do konta aws:
 ```
 cd ~/.aws/
