@@ -1,9 +1,3 @@
-<style>
-    .red-text {
-        color: green;
-    }
-</style>
-
 # Born to be Wild
 Realizacja wykonania kompletnego CICD od podstaw.
 
@@ -33,7 +27,6 @@ subgraph CD
 E --> F[docker hub public release]
 end
 ```
-**<span class="red-text">czerwony</span>**
 ### Konfiguracja instancji aws_wordpress_tf
 instalacja skryptów:
 ```
