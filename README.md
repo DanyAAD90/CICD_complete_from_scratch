@@ -44,8 +44,6 @@ instalacja skryptów:
 skrypt
 ```
 ### Automatyzacja tworzenia instancji Terraform
-Tworzenie instancji terraform, z której będą tworzone automaty.
-
 Dane techniczne free tier eligible potrzebne do skonstruowania main.ft:
 ```
 AMI = ami-07d9b9ddc6cd8dd30
