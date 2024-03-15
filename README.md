@@ -1,5 +1,5 @@
 # Born to be Wild
-Rozpoczynamy zabawę w tworzenie vmek na aws w celu utworzenia CICD w oparciu o najnowsze technologie devops. Poniżej graph prezentujący wstępne założenia:
+Realizacja wykonania kompletnego CICD od podstaw.
 
 ```mermaid
 flowchart LR
