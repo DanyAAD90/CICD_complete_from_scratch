@@ -33,17 +33,17 @@ end
     }
 </style>
 
-# <font color="green">Konfiguracja instancji aws_wordpress_tf</font>
+<font color="green">Konfiguracja instancji aws_wordpress_tf</font>
 instalacja skryptów:
 ```
 skrypt
 ```
-# <font color="green">Konfiguracja instancji aws_jenkins_tf</font>
+<font color="green">Konfiguracja instancji aws_jenkins_tf</font>
 instalacja skryptów:
 ```
 skrypt
 ```
-# <font color="green">Konfiguracja instancji aws_grafana_tf</font>
+<font color="green">Konfiguracja instancji aws_grafana_tf</font>
 instalacja skryptów:
 ```
 skrypt
