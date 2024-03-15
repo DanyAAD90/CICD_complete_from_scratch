@@ -27,18 +27,23 @@ subgraph CD
 E --> F[docker hub public release]
 end
 ```
+<style>
+    .green-header {
+        color: green;
+    }
+</style>
 
-<span class="green-header"># Konfiguracja instancji aws_wordpress_tf</span>
+# <font color="green">Konfiguracja instancji aws_wordpress_tf</font>
 instalacja skryptów:
 ```
 skrypt
 ```
-<span class="green-header"># Konfiguracja instancji aws_jenkins_tf</span>
+# <font color="green">Konfiguracja instancji aws_jenkins_tf</font>
 instalacja skryptów:
 ```
 skrypt
 ```
-<span class="green-header"># Konfiguracja instancji aws_grafana_tf</span>
+# <font color="green">Konfiguracja instancji aws_grafana_tf</font>
 instalacja skryptów:
 ```
 skrypt
