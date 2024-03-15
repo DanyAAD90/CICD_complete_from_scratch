@@ -27,8 +27,25 @@ subgraph CD
 E --> F[docker hub public release]
 end
 ```
-## Tworzenie instancji na AWS
-Dane techniczne free tier eligible
+## Konfiguracja instancji aws_wordpress_tf
+instalacja skryptów:
+```
+skrypt
+```
+## Konfiguracja instancji aws_jenkins_tf
+instalacja skryptów:
+```
+skrypt
+```
+## Konfiguracja instancji aws_grafana_tf
+instalacja skryptów:
+```
+skrypt
+```
+## Automatyzacja tworzenia instancji Terraform
+Tworzenie instancji terraform, z której będą tworzone automaty.
+
+Dane techniczne free tier eligible potrzebne do skonstruowania main.ft:
 ```
 AMI = ami-07d9b9ddc6cd8dd30
 instance type = t2.micro
@@ -36,8 +53,39 @@ key pair = aws_hosting
 security group = vpc-0bb5a3a12797eabae (launch-wizard-1)
 volumes = storage 8GiB
 ```
+Instalacja na instancji terraform programu terraform oraz aws cli
+Skonfigurowanie IAM, grupy, usera na koncie AWS
+Konfiguracja pliku config w ~/.aws/config
+Logowanie do konta aws:
+```
+cd ~/.aws/
+aws sso login --profile default
+```
+oraz sprawdzenie, czy widoczne są instancje:
+```
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,InstanceType,State.Name,PublicIpAddress]'
+```
+Dodanie usera ubuntu do root:
+```
+sudo usermod -aG root ubuntu
+sudo reboot
+```
+Uruchomienie procesu automatyzacji:
+```
+cd ~/terraform
+terraform init
+terraform plan -lock=false
+terraform apply -lock=false
+```
+Do usuwania zasobów:
+```
+terraform destroy -lock=false
+```
+jednakże to nie działa na aws.
+Automat zwraca public_dns oraz public_ip utworzonych instancji.
 
-
+notatki:
+```
 aws hosting cicd
 
 dzień trzeci, stawiamy jenkinsa. commit....
@@ -46,3 +94,4 @@ STWORZYC DOCKERFILE -> WGRAC DOCKERFILE NA REPO NASZE -> OD STRONY JENKINSA ZROB
 
 dalsze testy i kroki....
 dalej dalej....
+```
