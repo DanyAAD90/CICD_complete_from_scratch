@@ -27,22 +27,22 @@ subgraph CD
 E --> F[docker hub public release]
 end
 ```
-<span class="green-header">### Konfiguracja instancji aws_wordpress_tf</span>
+<span class="green-header"># Konfiguracja instancji aws_wordpress_tf</span>
 instalacja skryptów:
 ```
 skrypt
 ```
-<span class="green-header">### Konfiguracja instancji aws_jenkins_tf</span>
+<span class="green-header"># Konfiguracja instancji aws_jenkins_tf</span>
 instalacja skryptów:
 ```
 skrypt
 ```
-<span class="green-header">### Konfiguracja instancji aws_grafana_tf</span>
+<span class="green-header"># Konfiguracja instancji aws_grafana_tf</span>
 instalacja skryptów:
 ```
 skrypt
 ```
-<span class="blue-header">### Automatyzacja tworzenia instancji Terraform</span>
+<span class="blue-header"># Automatyzacja tworzenia instancji Terraform</span>
 Tworzenie instancji terraform, z której będą tworzone automaty.
 
 Dane techniczne free tier eligible potrzebne do skonstruowania main.ft:
