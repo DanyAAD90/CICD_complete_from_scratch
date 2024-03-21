@@ -28,9 +28,10 @@ E --> F[docker hub public release]
 end
 ```
 ### Konfiguracja instancji aws_wordpress_tf
-instalacja skryptów:
+instalacja skryptów w folderze /wordpress:
 ```
-skrypt
+install.sh
+docker-compose.yml
 ```
 ### Konfiguracja instancji aws_jenkins_tf
 instalacja skryptów:
@@ -51,7 +52,9 @@ key pair = aws_hosting
 security group = vpc-0bb5a3a12797eabae (launch-wizard-1)
 volumes = storage 8GiB
 ```
+zmienne w main.tf znajdują się w terraform.tfvars.
 Instalacja na instancji terraform programu terraform oraz aws cli. \
+## MFA
 Skonfigurowanie IAM, grupy, usera na koncie AWS. \
 Konfiguracja pliku config w ~/.aws/config. \
 Logowanie do konta aws:
