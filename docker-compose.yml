@@ -1,3 +1,4 @@
+#----plik znajduje sie w folderze /wordpress ----
 services:
 services:
   wordpress:
