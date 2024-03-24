@@ -1,6 +1,11 @@
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}
+variable "private_key_path" {}
+
+locals {
+  private_key_path = var.private_key_path
+}
 
 provider "aws" {
   access_key = var.access_key
@@ -24,38 +29,20 @@ resource "aws_instance" "wordpress" {
   tags = {
     Name = "aws_wordpress_tf"
   }
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = file("/home/ubuntu/aws/aws_hosting.pem")
-    host        = self.public_ip
-  }
-
-  provisioner "file" {
-    source      = "/home/ubuntu/tf_provisioning/wordpress/install.sh"
-    destination = "/home/ubuntu/install.sh"
-  }
-
   provisioner "remote-exec" {
-    inline = [
-      "chmod +x /home/ubuntu/install.sh",
-      "/home/ubuntu/install.sh"
-    ]
-  }
+    inline = ["echo 'Wait until SSH is ready'"]
   
-  provisioner "file" {
-    source      = "/home/ubuntu/tf_provisioning/wordpress/docker-compose.yml"
-    destination = "/home/ubuntu/docker-compose.yml"
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file(local.private_key_path)
+      host        = self.public_ip
+    }
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "docker-compose up -d",
-      "sleep 10"
-    ]
+  provisioner "local-exec" {
+    command = "ansible-playbook -i ${self.public_ip}, --private-key ~/tf_provisioning/aws_hosting.pem ~/tf_provisioning/wordpress/play_wp.yaml"
   }
-
-}
 
 #resource "aws_instance" "jenkins" {
 #  ami           = "ami-07d9b9ddc6cd8dd30"
