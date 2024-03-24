@@ -41,7 +41,7 @@ resource "aws_instance" "wordpress" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${self.public_ip}, --private-key ~/tf_provisioning/aws_hosting.pem ~/tf_provisioning/wordpress/play_wp.yaml"
+    command = "ansible-playbook -i ${self.public_ip}, --private-key ${local.private_key_path} ~/tf_provisioning/wordpress/play_wp.yaml"
   }
 
 #resource "aws_instance" "jenkins" {
