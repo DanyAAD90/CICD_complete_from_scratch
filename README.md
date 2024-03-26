@@ -85,6 +85,22 @@ terraform destroy -lock=false
 jednakże to nie działa na aws.
 Automat zwraca public_dns oraz public_ip utworzonych instancji.
 
+## Instalacja Wordpress za pomocą Ansible-Galaxy
+należy zedytować poniższe pliki:
+```
+become_method = sudo
+
+1. /roles/server/tasks/main.yml
+2. /roles/php/tasks/main.yml
+3. /roles/mysql/defaults/main.yml
+4. /roles/mysql/tasks/main.yml
+5. /roles/wordpress/tasks/main.yml
+6. /roles/wordpress/handlers/main.yml
+```
+próba wejscia
+```
+ansible-playbook -i 1.2.3.4, --private-key /home/ubuntu/tf_provisioning/aws_hosting.pem /home/ubuntu/tf_provisioning/wordpress/playbook.yaml
+```
 notatki:
 ```
 aws hosting cicd
