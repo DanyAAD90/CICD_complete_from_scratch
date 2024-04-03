@@ -1,0 +1,8 @@
+#--- wykluczone pliki
+.my.cnf
+ansible.cfg
+terraform.tfvars
+.terraform.lock.hcl
+aws_hosting.pem
+wordpress/ansible.cfg
+.terraform/providers/registry.terraform.io/hashicorp/aws/5.41.0/linux_amd64/terraform-provider-aws_v5.41.0_x5

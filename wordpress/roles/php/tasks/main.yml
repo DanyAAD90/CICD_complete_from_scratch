@@ -1,0 +1,10 @@
+---
+# tasks file for php
+- name: Install php extensions
+  apt: name={{ item }} state=present
+  become: yes
+  become_method: sudo
+  with_items:
+  #  - php7.2-gd
+  # - php7.2-ssh2
+    - php-ssh2

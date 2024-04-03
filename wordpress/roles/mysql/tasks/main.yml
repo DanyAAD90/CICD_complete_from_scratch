@@ -1,0 +1,22 @@
+---
+# tasks file for mysql
+- name: Create mysql database
+  community.mysql.mysql_db: 
+  #  name={{ wp_mysql_db }} 
+    name: ubuntu
+    state: present
+    login_user: ubuntu
+    login_password: ubuntu
+  become: yes
+
+- name: Create mysql user
+  community.mysql.mysql_user:
+  #  name={{ wp_mysql_user }}
+  #  password={{ wp_mysql_password }}
+    name: ubuntu
+    login_user: ubuntu
+    login_password: ubuntu
+  # priv: "*.*:ALL"
+  # priv: "*.*:SELECT,INSERT,UPDATE,DELETE" 
+  become: yes
+

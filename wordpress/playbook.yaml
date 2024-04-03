@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+  - name: install python 3
+    raw: test -e /usr/bin/python3 || (apt -y update && apt install -y python-is-python3)
+  
+#- hosts: all #bylo wordpress
+  roles:
+    - server
+    - php
+    - mysql
+    - wordpress
