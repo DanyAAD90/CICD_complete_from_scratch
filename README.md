@@ -88,8 +88,6 @@ Automat zwraca public_dns oraz public_ip utworzonych instancji.
 ## Instalacja Wordpress za pomocą Ansible-Galaxy
 należy zedytować poniższe pliki:
 ```
-become_method = sudo
-
 1. /roles/server/tasks/main.yml
 2. /roles/php/tasks/main.yml
 3. /roles/mysql/defaults/main.yml
@@ -101,6 +99,16 @@ próba wejscia
 ```
 ansible-playbook -i 1.2.3.4, --private-key /home/ubuntu/tf_provisioning/aws_hosting.pem /home/ubuntu/tf_provisioning/wordpress/playbook.yaml
 ```
+### Proces instalacji Wordpress
+Terraform kopiuje i za pomocą scp wkleja plik preintall.sh na nowo utworzoną maszynę. Wykonuje na niej wstępne konfiguracjie, w tym dodaje bazy mysql usera ubuntu do uwierzytelnienia w bazach danych. Następnie wykonywany jest playbook.yml który uruchamia usługę.
+
+## Problemy
+W przeglądarce pod adresem
+```
+http://1.2.3.4/wp-admin/install.php
+```
+witnieje tylko 404 oraz serwer apache nie jest dostępny.
+
 notatki:
 ```
 aws hosting cicd
