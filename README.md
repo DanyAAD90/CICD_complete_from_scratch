@@ -46,10 +46,10 @@ skrypt
 ### Automatyzacja tworzenia instancji Terraform
 Dane techniczne free tier eligible potrzebne do skonstruowania main.ft:
 ```
-AMI = ami-07d9b9ddc6cd8dd30
-instance type = t2.micro
+AMI = var.ami
+instance type = var.insta_type
 key pair = aws_hosting
-security group = vpc-0bb5a3a12797eabae (launch-wizard-1)
+security group = (launch-wizard-1)
 volumes = storage 8GiB
 ```
 zmienne w main.tf znajdują się w terraform.tfvars.
