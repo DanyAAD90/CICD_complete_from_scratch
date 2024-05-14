@@ -1,5 +1,4 @@
 services:
-services:
   wordpress:
     image: wordpress:latest
     container_name: born_to_be_wild
