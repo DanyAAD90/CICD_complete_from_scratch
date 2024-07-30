@@ -42,7 +42,7 @@ else
 fi
 
 #------dostepy dla ansible -------
-#------naraz chyba nie mozna wszystkiego bo sie wywala---------
+#---------------
 chown -R ubuntu:ubuntu /var/lib/apt/lists/
 chown -R ubuntu:ubuntu /var/lib/dpkg/
 chown -R ubuntu:ubuntu /var/cache/apt/archives/
