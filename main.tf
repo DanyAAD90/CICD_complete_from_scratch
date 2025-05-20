@@ -70,62 +70,62 @@ resource "aws_instance" "wordpress" {
 
 
 
-#resource "aws_instance" "jenkins" {
-#  ami           = var.ami
-#  instance_type = ver.insta_type
-#  key_name      = "aws_hosting"
-#  security_groups = ["launch-wizard-1"]
-#
-#  // Dodawanie nowego dysku EBS o rozmiarze 8 GiB
-#  ebs_block_device {
-#    device_name = "/dev/sdf"
-#    volume_size = 8
-#    volume_type = "gp2"
-#    delete_on_termination = true
-#  }
-#  tags = {
-#    Name = "aws_jenkins_tf"
-#  }
-#}
+resource "aws_instance" "jenkins" {
+  ami           = var.ami
+  instance_type = ver.insta_type
+  key_name      = "aws_hosting"
+  security_groups = ["launch-wizard-1"]
 
-#resource "aws_instance" "grafana" {
-#  ami           = var.ami
-#  instance_type = var.insta_type
-#  key_name      = "aws_hosting"
-#  security_groups = ["launch-wizard-1"]
-#
-#  // Dodawanie nowego dysku EBS o rozmiarze 8 GiB
-#  ebs_block_device {
-#    device_name = "/dev/sdf"
-#    volume_size = 8
-#    volume_type = "gp2"
-#    delete_on_termination = true
-#  }
-#  tags = {
-#    Name = "aws_grafana_tf"
-#  }
-#}
+  // Dodawanie nowego dysku EBS o rozmiarze 8 GiB
+  ebs_block_device {
+    device_name = "/dev/sdf"
+    volume_size = 8
+    volume_type = "gp2"
+    delete_on_termination = true
+  }
+  tags = {
+    Name = "aws_jenkins_tf"
+  }
+}
+
+resource "aws_instance" "grafana" {
+  ami           = var.ami
+  instance_type = var.insta_type
+  key_name      = "aws_hosting"
+  security_groups = ["launch-wizard-1"]
+
+  // Dodawanie nowego dysku EBS o rozmiarze 8 GiB
+  ebs_block_device {
+    device_name = "/dev/sdf"
+    volume_size = 8
+    volume_type = "gp2"
+    delete_on_termination = true
+  }
+  tags = {
+    Name = "aws_grafana_tf"
+  }
+}
 
 output "wordpress_dns" {
   value = aws_instance.wordpress.*.public_dns
 }
 
-#output "jenkins_dns" {
-#  value = aws_instance.jenkins.*.public_dns
-#}
+output "jenkins_dns" {
+  value = aws_instance.jenkins.*.public_dns
+}
 
-#output "grafana_dns" {
-#  value = aws_instance.grafana.*.public_dns
-#}
+output "grafana_dns" {
+  value = aws_instance.grafana.*.public_dns
+}
 
 output "wordpress_ssh" {
   value = aws_instance.wordpress.*.public_ip
 }
 
-#output "jenkins_ssh" {
-#  value = aws_instance.jenkins.*.public_ip
-#}
+output "jenkins_ssh" {
+  value = aws_instance.jenkins.*.public_ip
+}
 
-#output "grafana_ssh" {
-#  value = aws_instance.grafana.*.public_ip
-#}
+output "grafana_ssh" {
+  value = aws_instance.grafana.*.public_ip
+}
