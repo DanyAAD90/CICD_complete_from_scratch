@@ -1,5 +1,5 @@
 # Born to be Wild
-Realizacja wykonania kompletnego CICD od podstaw.
+Realizacja wykonania kompletnego CICD od podstaw. Trwają prace nad projektem, jednakże działanie terraform oraz provisioning wordpress na vm działa poprawnie.
 
 ```mermaid
 flowchart LR
