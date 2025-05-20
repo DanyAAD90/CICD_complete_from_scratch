@@ -1,5 +1,5 @@
 # Born to be Wild
-Realizacja wykonania kompletnego CICD od podstaw. Trwają prace nad projektem, jednakże działanie terraform (w tym upload plików na utworzone vm) działa poprawnie.
+Realizacja wykonania kompletnego CICD od podstaw na chmurze AWS. Trwają prace nad projektem, jednakże działanie terraform (w tym upload plików na utworzone vm) działa poprawnie.
 
 ```mermaid
 flowchart LR
